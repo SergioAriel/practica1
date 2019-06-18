@@ -8,9 +8,7 @@ class InputRead extends Component {
 
     return (
     <div>
-        <input type="text" name="nombredelacaja">
-         
-        </input>
+      <span>{this.props.Message}</span>
     </div>
        );
  
