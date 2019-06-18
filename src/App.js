@@ -1,31 +1,29 @@
 import React, {Component} from 'react';
-import InputRead from './components/inputRead'
 import InputWrite from './components/inputWrite';
+import InputRead from './components/inputRead';
 
 
 class App extends Component {    
 
     state = { 
-      Message: "",
-    }
+      Message: [],
+        };
 
-
-
-
-  handleAddMessage(Message){
-    this.Message({
-      Message:[...this.state.Message]
-    })
-  }
+        handleInputChange = Message => {
+          this.setState({ Message });
+          
+        };
 
   render () { 
+
   return (
     <div>
         <InputWrite 
-        Message={this.state.Message}
+Message={this.state.Message}
+onInputChange={this.handleInputChange}
         />
-        <InputRead
-        addMessage={this.handleAddMessage.bind(this)}
+        <InputRead 
+        Message={this.state.Message}
         />
     </div>
     );
